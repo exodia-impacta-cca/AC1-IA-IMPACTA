@@ -9,6 +9,7 @@ def executaBFS():
     """
     #criar fila
     fila = deque([])
+
     
     #por ser um gráfico, criamos uma lista de visitantes
     visitados = []
