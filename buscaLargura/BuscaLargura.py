@@ -1,6 +1,7 @@
 from No import No
 from Estado import Estado
 from collections import deque
+from time import sleep
 
 
 def executaBFS():
@@ -22,7 +23,7 @@ def executaBFS():
     
     # verifique se há algo na para retirar da fila (dar o  dequeue)
     while len(fila) > 0:
-        
+        sleep(0.5)
         #obtem o primeiro item da fila
         noAtual = fila.popleft()
         
@@ -30,7 +31,7 @@ def executaBFS():
         
         #verifica se é o estado meta
         if noAtual.estado.funcaoObjetivo():
-            print ("Atingiu o estado objetivo")
+            print ("Atingiu o estado objetivo!")
             #faz o print do caminho
             print ("----------------------")
             print ("Caminho")
@@ -53,16 +54,8 @@ def executaBFS():
                 noAtual.addFilho(noFilho)
                 fila.append(noFilho)
 
-
-    
-    
-                
             
     #print arvore
     print ("----------------------")
     print ("Arvore")
     raiz.printArvore()
-
-
-
-executaBFS()

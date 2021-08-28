@@ -1,8 +1,8 @@
-class No:
-    '''
-    Esta classe representa um nó na árvore de busca
-    '''
-    
+# nó da busca em Profundidade
+'''
+Esta classe representa um nó na árvore de busca
+'''
+class No():
     def __init__(self, estado):
         """
         Construtor
@@ -21,12 +21,12 @@ class No:
         noFilho.pai = self   # o noFilho aponta para o nó atual
         noFilho.profundidade = self.profundidade + 1
         
-    
+
     def printArvore(self):
         """
         Este método imprime a sub-árvore a partir desse nó
         """
-        print (self.profundidade , " - " , self.estado.caminho)
+        print (self.profundidade , " - " , self.estado.nome)
         for umFilho in self.filhos:
             umFilho.printArvore()
             

@@ -1,6 +1,6 @@
 from Estado import Estado
 from No import No
-
+from time import sleep
 
 class BuscaEmProfundidade():
     """
@@ -12,10 +12,10 @@ class BuscaEmProfundidade():
     
     def busca(self):
         """
-       Este método realiza a busca
+        Este método realiza a busca
         """
         #pega o estado inicial
-        estadoInicial = Estado('/home/ec2-user/environment/DiretorioInicial')
+        estadoInicial = Estado()
         
         #cria o nó raiz
         noRaiz = No(estadoInicial)
@@ -27,21 +27,20 @@ class BuscaEmProfundidade():
         
     
     def DFS(self, no):
+        sleep(0.5)
         """
         Isso cria a árvore de busca
         """
         if not self.achou:
-            print ("-- proc --", no.estado.caminho)
-            
+            print ("-- proc --", no.estado.nome)
             # verifica se foi atingido o estado meta
             if no.estado.funcaoObjetivo():
-                print ("Atingido o estado de meta")
+                print ("Atingido o estado de meta!")
                 self.achou = True
                 
             else:
                 # encontra os estados sucessores do estado atual
                 estadosFilhos = no.estado.funcaoSucessora()
-                
                 # adiciona os nós filhos na árvore
                 for estadoFilho in estadosFilhos:
                     noFilho = No(Estado(estadoFilho))

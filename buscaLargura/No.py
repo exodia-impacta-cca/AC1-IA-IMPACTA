@@ -1,5 +1,9 @@
+# nó da busca em Largura
 from Estado import Estado
+from time import sleep
+
 class No():
+    
     '''
     Esta classe representa um nó na árvore de busca
     '''
@@ -25,6 +29,7 @@ class No():
         """
         Este método imprime a sub-árvore a partir desse nó
         """
+        sleep(0.5)
         print (self.profundidade , " - " , self.estado.nome)
         for umFilho in self.filhos:
             umFilho.printArvore()

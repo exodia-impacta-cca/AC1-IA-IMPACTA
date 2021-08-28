@@ -1,10 +1,12 @@
+# Estado da largura
+
 from GrafoDados import *
 
 class Estado():
     '''
     Esta classe recupera informações de estado de um aplicatico de conexão social
     '''
-    
+    # Construtor
     def __init__(self, nome = None):
         if nome == None:
              #cria o estado inicial
@@ -12,7 +14,7 @@ class Estado():
         else:
             self.nome = nome
             
-    def getEstadoInicial(self, ):
+    def getEstadoInicial(self):
         """
         Este método retorna o nome  Ana
         """
@@ -29,8 +31,7 @@ class Estado():
         
     def funcaoObjetivo(self):
         """
-        Esse método verifica se a pessoa é Gil
+        Esse método verifica o objetivo final
         """ 
-        #verifique se o nome da pessoa é Gil
         return self.nome == "Faculdade Impacta"
         
