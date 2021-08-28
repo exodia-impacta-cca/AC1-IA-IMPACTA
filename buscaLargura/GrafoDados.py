@@ -14,3 +14,6 @@ conexoes ["Morumbi"] = {"Pinheiros", "Santo Amaro"}
 conexoes ["Sé"] = {"Barra Funda", "Santa Cruz"}
 conexoes ["Faculdade Impacta"] = {"Barra Funda"}
 conexoes ["Santa Cruz"] = {"Sé", "Santo Amaro"}
+
+
+#teste de conexão
