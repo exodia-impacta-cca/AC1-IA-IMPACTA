@@ -1,11 +1,11 @@
-# nó da busca em Profundidade
-
-from math import sqrt
 from GrafoDados import *
-'''
-Esta classe representa um nó na árvore de busca
-'''
-class No():
+import math
+
+class No:
+    '''
+    Essa classe representa um noh na arvore de busca
+    '''
+    
     def __init__(self, estado,noPai):
         """
         Construtor
@@ -69,11 +69,10 @@ class No():
         #delta na coordenada y
         dy = local1[1] - local2[1]
         #distancia
-        distancia = sqrt(dx ** 2 + dy ** 2)
+        distancia = math.sqrt(dx ** 2 + dy ** 2)
         return distancia
     
         
-       
     def calculaCusto(self):
         """
         Este metodo calcula a distancia do noh atual ateh o o no raiz
@@ -88,14 +87,13 @@ class No():
             self.custoAteRaiz = 0
         
     
-
         
     def calculaHeuristica(self):
         """
         Esta funcao calcula o valor heuristico do noh
         """        
         # encontre a distância entre este estado e o estado objetivo
-        localMeta = localizacao["Casa"]
+        localMeta = localizacao["Faculdade Impacta"]
         localCorrente = localizacao[self.estado.posicao]
         distanciaParaMeta = self.calculaDistancia(localMeta,localCorrente )
         
@@ -104,3 +102,5 @@ class No():
               
         print ("Heuristica para ", self.estado.posicao, "=", heuristica," (",self.custoAteRaiz, distanciaParaMeta,")")
         self.heuristica = heuristica  
+
+
