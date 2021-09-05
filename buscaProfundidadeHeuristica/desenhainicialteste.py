@@ -11,7 +11,7 @@ estadosFilhos = estadoInicial.funcaoSucessora()
 for filho in estadosFilhos:
     filho = No(Estado(filho),raiz) 
 
-
+objetivo = No(estadoInicial.funcaoObjetivo(),)
 plotaArvore = DesenhaArvore()
 
 plotaArvore.criaDiagrama(raiz,raiz)
