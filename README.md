@@ -1,6 +1,7 @@
 # AC1-IA-IMPACTA
 AC1 Faculdade Impacta na disciplina de Inteligência Artificial
-Segunda parte da atividade contínua 1 - Busca Heurística e Busca A*
+
+[x]Segunda parte da atividade contínua 1 - Busca Heurística e Busca A*
 
 Integrantes:
 - Arthur Vinicius Santos Silva    RA: 1903665
