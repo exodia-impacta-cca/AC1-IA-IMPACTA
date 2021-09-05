@@ -6,70 +6,82 @@ from GrafoDados import *
 Esta classe representa um nó na árvore de busca
 '''
 class No():
-    def __init__(self, estado, noPai):
+       def __init__(self, estado,noPai):
         """
         Construtor
         """
         self.estado = estado
         self.profundidade = 0
         self.filhos = []
-        self.pai= self.colocaPai(noPai)
-        self.heuristica = None
+        self.pai= None
+        self.colocaPai(noPai)
         self.fringe = True
-    
-    def colocaPai(self,noPai):
-        """
-        Esse metodo adiciona um nó a outro nó
-        """
-        if noPai != None:
-            noPai.filhos.append(self)
-            self.pai = noPai
-            self.profundidade = noPai.profundidade + 1
-        else:
-            self.pai = None
-        
-        
-    def addFilho(self, noFilho):
-        """
-        Este método adiciona um nó em outro nó
-        """
-        self.filhos.append(noFilho)
-        noFilho.pai = self   # o noFilho aponta para o nó atual
-        noFilho.profundidade = self.profundidade + 1
-        
+        self.heuristica = 0
+        self.custoAteRaiz = 0
+        self.calculaCusto()
+        self.calculaHeuristica()
+                    
+        def colocaPai(self, noPai):
+            """
+            Esse metodo adiciona um noh em outro noh
+            """
+            if noPai != None:
+                noPai.filhos.append(self)
+                self.pai = noPai
+                self.profundidade = noPai.profundidade + 1
+            else:
+                self.pai = None
 
-    def printArvore(self):
-        """
-        Este método imprime a sub-árvore a partir desse nó
-        """
-        print (self.profundidade , " - " , self.estado.nome)
-        for umFilho in self.filhos:
-            umFilho.printArvore()
+
+        def addFilho(self, noFilho):
+            """
+            Este método adiciona um nó em outro nó
+            """
+            self.filhos.append(noFilho)
+            noFilho.pai = self   # o noFilho aponta para o nó atual
+            noFilho.profundidade = self.profundidade + 1
+
+
+        def printArvore(self):
+            """
+            Este metodo faz um print da arvore de busca 
+            """
+            print (self.profundidade , " - " , self.estado.posicao)
+            for filho in self.filhos:
+                filho.printArvore()
+
+
+        def printCaminho(self):
+            """
+            Este metdo faz um print do estado inicial ateh o estado meta
+            """
+            if self.pai != None:
+                self.pai.printCaminho()
+            print ("-> ", self.estado.posicao)
             
-    def printCaminho(self):
-                """
-                Este método imprime o caminho do estado inicial ao estado objetivo
-                """
-                if self.pai != None:
-                    self.pai.printCaminho()  
-                print ("-> ", self.estado.nome)
-    
-    def calculaheuristica(self):
-        '''
-        Essa função calcula o valor da heuristica para esse nó
-        '''
-        #Calcula a distancia do estado atual para o estado meta
 
-        #localização destino
-        localizacaoMeta = conexoes["Faculdade Impacta"]
-        #localização atual
-        localizacaoAtual = conexoes[self.estado.nome]
-        #delta na coordenada x
-        dx = localizacaoMeta[0] - localizacaoAtual[0]
-        #delta na coordenada y
-        dy = localizacaoMeta[1] - localizacaoAtual[1]
-        #distancia
-        distancia = sqrt(dx ** 2 + dy ** 2)
-        self.heuristica = distancia
-
+        def calculaDistancia(self, local1, local2):
+            """
+            Este metodo calcula a distancia entre dois pontos
+            """
+            #delta na coordenada x
+            dx = local1[0] - local2[0]
+            #delta na coordenada y
+            dy = local1[1] - local2[1]
+            #distancia
+            distancia = math.sqrt(dx ** 2 + dy ** 2)
+            return distancia
         
+            
+        def calculaCusto(self):
+            """
+            Este metodo calcula a distancia do noh atual ateh o o no raiz
+            """
+            
+            if self.pai!= None:
+                #encontrar distância do nó atual ao pai
+                distancia = self.calculaDistancia(conexoes[self.estado.posicao], conexoes[self.pai.estado.posicao])
+                #custo = custo do pai + distancia
+                self.custoAteRaiz = self.pai.custoAteRaiz + distancia 
+            else:
+                self.custoAteRaiz = 0
