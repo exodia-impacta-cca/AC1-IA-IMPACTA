@@ -16,17 +16,28 @@ conexoes ["Santa Cruz"] = ["Sé"]
 
 # localização de todos os lugares
 localizacao ={}
-localizacao ["Casa"] = ["Amador Bueno"]
-localizacao ["Amador Bueno"] = ["Osasco"]
-localizacao ["Osasco"] = ["Júlio Prestes", "Pinheiros", "Amador Bueno"]
-localizacao ["Júlio Prestes"] = ["Barra Funda" ]
-localizacao ["Barra Funda"] = ["Faculdade Impacta"]
-localizacao ["Pinheiros"] = ["Morumbi", "Consolação", "Santo Amaro"]
-localizacao ["Santo Amaro"] = [ "Santa Cruz"]
-localizacao ["Consolação"] = ["Anhangabaú"]
-localizacao ["Anhangabaú"] = ["Barra Funda"] 
-localizacao ["Morumbi"] = ["Santo Amaro"]
-localizacao ["Sé"] = ["Barra Funda"]
-localizacao ["Faculdade Impacta"] = ["Barra Funda"]
-localizacao ["Santa Cruz"] = ["Sé"]
+localizacao ["Casa"] = [3,8]
+localizacao ["Amador Bueno"] = [3,7]
+localizacao ["Osasco"] = [3,6]
+
+localizacao["Pinheiros"]= [3,5]
+
+localizacao["Morumbi"] = [2,4]
+localizacao["Santo Amaro"] = [3,4]
+localizacao ["Consolação"] = [4,4]
+
+localizacao ["Santa Cruz"] = [3,3]
+localizacao ["Sé"] = [2,3]
+
+localizacao["Anhamgabaú"] = [4,3]
+
+
+localizacao["Júlio Prestes"] = [5,6]
+
+localizacao["Barra Funda"] = [1,6]
+
+localizacao["Faculdade Impacta"] = [6,0]
+
+
+
 

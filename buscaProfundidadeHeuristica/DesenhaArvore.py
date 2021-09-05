@@ -6,7 +6,7 @@ class DesenhaArvore:
     '''
     Essa classe desenha a arvore de busca
     '''
-     def __init__(self):
+    def __init__(self):
         """
         Construtor
         """
