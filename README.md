@@ -1,7 +1,7 @@
 # AC1-IA-IMPACTA
 AC1 Faculdade Impacta na disciplina de Inteligência Artificial
 
-Segunda parte da atividade contínua 1:- 
+Segunda parte da atividade contínua 1:
 - [x] Busca Heurística
 - [x] Busca A*
 
